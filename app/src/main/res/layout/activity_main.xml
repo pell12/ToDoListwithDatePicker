@@ -1,25 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/taskNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:hint="Task name"
+        android:minHeight="48dp" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/dueDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
-        android:text="To Do List"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Select a due date"
+        android:layout_below="@id/taskNameEditText"
+        android:layout_marginTop="20dp" />
 
+    <Button
+        android:id="@+id/showDatePickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Due Date"
+        android:layout_below="@id/dueDateTextView"
+        android:layout_marginTop="20dp" />
 
+    <Button
+        android:id="@+id/addTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Task"
+        android:layout_below="@id/showDatePickerButton"
+        android:layout_marginTop="20dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ListView
+        android:id="@+id/taskListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addTaskButton"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>
